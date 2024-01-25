@@ -195,7 +195,8 @@ class RoboAnalysis():
         self.FTI_vel_b_list.append(self.FTI_vel_Lb)
         self.FTI_acc_b_list.append(self.FTI_acc_Lb)
         # Total forces
-        FT_total = self.FTI_vel_Lw+self.FTI_acc_Lw+self.FT_wb_median
+        FT_wb_median_scaled = self.FT_wb_median*self.F_scaling
+        FT_total = self.FTI_vel_Lw+self.FTI_acc_Lw+FT_wb_median_scaled
         #FT_total = self.FT_wb_median
         self.FT_total_wing_list.append(FT_total)
         # Mean forces
